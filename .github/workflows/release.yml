@@ -1,0 +1,67 @@
+name: Prepare draft release
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout tagged source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: '24'
+          package-manager-cache: false
+
+      - name: Install locked dependencies
+        run: npm ci
+
+      - name: Test
+        run: npm test
+
+      - name: Build versioned release
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: npm run release -- --expect-tag "$RELEASE_TAG"
+
+      - name: Create draft release with assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          if gh release view "$RELEASE_TAG" --repo "$GH_REPO" >/dev/null 2>&1; then
+            echo '::error::A release already exists for this tag. Refusing to overwrite it.'
+            exit 1
+          fi
+          release_options=(
+            --repo "$GH_REPO"
+            --verify-tag
+            --draft
+            --title "$RELEASE_TAG"
+            --generate-notes
+          )
+          if [[ "$RELEASE_TAG" == *-* ]]; then
+            release_options+=(--prerelease)
+          fi
+          gh release create "$RELEASE_TAG" \
+            "release/www-${RELEASE_TAG}.tar.gz" \
+            "release/www-${RELEASE_TAG}.tar.gz.sha256" \
+            "${release_options[@]}"

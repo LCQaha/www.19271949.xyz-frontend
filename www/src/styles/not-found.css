@@ -1,0 +1,40 @@
+/* 此版本的内嵌样式。 */
+.lost-main { flex: 1; display: grid; grid-template-columns: 1.15fr 1fr; align-items: center; gap: 3.5rem; padding-block: clamp(3.5rem, 9vh, 7rem); }
+.lost-copy { min-width: 0; }
+.lost-label { display: inline-flex; align-items: center; gap: .65rem; padding: .55rem .85rem; border: 1px solid var(--line); border-radius: 30px; color: var(--muted); font-size: .875rem; }
+.lost-label .status-dot { color: #668d25; }
+.lost-copy h1 { font-size: clamp(3.25rem, 6.5vw, 5.5rem); line-height: 1.28; letter-spacing: -.065em; margin-top: 1.75rem; }
+.lost-oh { position: relative; isolation: isolate; }
+.lost-oh::after { content: ""; position: absolute; left: 0; right: .95em; bottom: .08em; height: .22em; z-index: -1; background: var(--accent); transform: rotate(-5deg); }
+.lost-period { color: #6c9630; }
+.lost-description { color: var(--muted); font-size: 1.0625rem; line-height: 1.9; margin-top: 1.5rem; }
+.lost-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1.5rem; margin-top: 2rem; }
+.lost-actions .primary-link { border-radius: 8px; }
+.lost-destination { display: flex; align-items: baseline; flex-wrap: wrap; gap: .4rem; color: var(--muted); font-size: .8125rem; margin-top: 2rem; }
+.lost-destination > span { margin-right: .4rem; }
+.lost-destination a { font-family: var(--mono); }
+.lost-destination a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+.lost-aside { min-width: 0; padding: 1.8rem 1.4rem; background-image: radial-gradient(#d9ddd1 .8px, transparent .8px); background-size: 18px 18px; }
+.lost-ticket { max-width: 400px; margin-inline: auto; border: 2px solid var(--ink); border-radius: 22px; background: var(--accent); box-shadow: 8px 8px 0 var(--ink); transform: rotate(5deg); overflow: hidden; }
+.ticket-top { display: flex; align-items: center; justify-content: space-between; gap: .75rem; padding: 1.35rem 1.5rem; font: .75rem var(--mono); letter-spacing: .025em; border-bottom: 1px solid var(--ink); }
+.ticket-top > span:last-child { font-size: 1.25rem; }
+.ticket-code { display: flex; align-items: center; justify-content: center; padding: 2rem 1rem .3rem; font-family: "Arial Black", var(--sans); font-weight: 900; font-size: min(10.3vw, 8.75rem); letter-spacing: -.08em; line-height: 1.1; }
+.ticket-code > span { display: inline-block; transform: translateY(-.06em) rotate(-15deg); margin-inline: .015em; }
+.ticket-oops { text-align: center; font: .875rem var(--mono); margin: .6rem 1rem 2rem; }
+.ticket-bottom { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.3rem 1.5rem; border-top: 2px dashed var(--ink); font-size: 1rem; line-height: 1.8; }
+.ticket-arrow { font-size: 3.5rem; line-height: 1; }
+.lost-aside-note { margin-top: 2.5rem; text-align: center; color: var(--muted); font-size: .875rem; }
+.lost-page .site-footer { margin-top: 0; }
+
+@media (max-width: 1000px) {
+  .lost-main { gap: 2rem; }
+  .lost-aside { padding-inline: 1rem; }
+}
+@media (max-width: 760px) {
+  .lost-main { grid-template-columns: 1fr; gap: 2.5rem; padding-block: 3rem; }
+  .lost-copy h1 { font-size: clamp(3rem, 11vw, 5rem); }
+  .lost-aside { width: 100%; max-width: 440px; justify-self: center; padding-inline: 1.5rem; }
+  .ticket-code { font-size: min(25vw, 8.75rem); }
+  .lost-actions { gap: .75rem 1.25rem; }
+  .lost-description { font-size: 1rem; }
+}

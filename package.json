@@ -1,0 +1,13 @@
+{
+  "name": "19271949.xyz",
+  "private": true,
+  "workspaces": ["www"],
+  "engines": { "node": "^20.19.0 || >=22.12.0" },
+  "scripts": {
+    "test": "node scripts/verify-app.mjs && node --test scripts/release.test.mjs",
+    "release": "node scripts/release.mjs",
+    "dev": "npm run dev --workspace=www --",
+    "build": "npm run build --workspace=www",
+    "preview": "npm run preview --workspace=www --"
+  }
+}

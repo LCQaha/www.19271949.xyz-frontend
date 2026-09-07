@@ -1,0 +1,73 @@
+/* Extend the recovered site styles; the construction sign stays unchanged. */
+.project-description {
+  min-height: 7.2em;
+  max-width: none;
+}
+.project-description > span { display: block; }
+.project-repositories { margin-bottom: 1.4rem; }
+.repository-heading { display: flex; align-items: center; gap: .4rem; color: var(--muted); font-size: .875rem; margin-bottom: .75rem; }
+.repository-heading > span { margin-left: .35rem; }
+.repository-platform { font: .6875rem var(--mono); letter-spacing: .07em; opacity: .75; }
+.repository-list { display: flex; flex-wrap: wrap; gap: .7rem; }
+.repository-link {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .65rem;
+  min-height: 46px;
+  padding: .65rem .9rem;
+  border: 1px solid var(--ink);
+  border-radius: 7px;
+  font-size: .875rem;
+  font-weight: 550;
+  background: var(--ink);
+  color: #fff;
+  transition: background .18s, color .18s, transform .18s, box-shadow .18s;
+}
+a.repository-link:hover { background: var(--accent); color: var(--ink); transform: translateY(-2px); box-shadow: 0 3px 0 var(--ink); }
+.repository-link svg { flex-shrink: 0; }
+.repository-link.is-pending { color: var(--muted); background: #f8f9f6; border: 1px solid var(--line); }
+.repository-link.is-pending .github-mark { opacity: .65; }
+.repository-note { padding-left: .5rem; border-left: 1px solid var(--line); font-size: .75rem; }
+.is-planned .project-visual { background: #f0f1ed; }
+.is-planned .project-monogram { color: #7b8075; }
+.is-planned .monogram-dot { color: #939d85; }
+.project-card { grid-template-columns: .72fr 1.45fr; border-radius: 12px; transition: border-color .2s, box-shadow .2s; }
+.project-card:hover { border-color: #b2baaa; box-shadow: 0 8px 26px #1b27150a; }
+.project-visual { min-height: 370px; padding: 1.4rem 1.5rem; background-color: #e9eee4; background-image: radial-gradient(#9caa902e .8px, transparent .8px); background-size: 14px 14px; }
+.visual-index { display: inline-flex; align-items: center; gap: .45rem; }
+.visual-dots { display: inline-flex; gap: 4px; }
+.visual-dots i { width: 4px; height: 4px; border-radius: 50%; background: currentColor; opacity: .3; }
+.visual-center { padding-block: 1.4rem; }
+.project-icon-tile { display: grid; place-items: center; width: 68px; height: 68px; background: #ffffffba; border: 1px solid #191b1829; border-radius: 17px; box-shadow: 3px 3px 0 #191b1810; transform: rotate(-6deg); }
+.project-monogram { font-size: clamp(4rem, 7vw, 6.5rem); margin-block: 1.35rem .2rem; }
+.project-tags { margin: 1.15rem 0 1.5rem; }
+.project-tags li { display: inline-flex; align-items: center; gap: .45rem; padding: .4rem .65rem; background: #f5f6f3; border: 1px solid #e9ece4; border-radius: 5px; }
+.tech-brand { display: inline-block; width: 16px; height: 16px; mask-size: contain; mask-repeat: no-repeat; mask-position: center; flex-shrink: 0; }
+.project-card[data-project="example-notes"] .project-visual { background-color: #e7eaf1; }
+.project-card[data-project="example-notes"] .project-icon-tile { color: #485f91; }
+.project-card[data-project="example-habits"] .project-visual { background-color: #e8eedc; }
+.project-card[data-project="example-habits"] .project-icon-tile { color: #517433; }
+.project-card[data-project="example-files"] .project-visual { background-color: #e1ecee; }
+.project-card[data-project="example-files"] .project-icon-tile { color: #377581; }
+.project-link { border-radius: 6px; padding: .65rem .9rem; }
+.nav-link, .nav-github, .footer-links a { display: inline-flex; align-items: center; gap: .5rem; }
+.nav-github { min-height: 42px; padding-inline: .75rem; border: 1px solid var(--line); border-radius: 7px; }
+.nav-github:hover { background: var(--accent); border-color: var(--ink); }
+.github-mark { flex-shrink: 0; }
+.site-header nav { gap: 1.75rem; }
+.error-page .lost-actions .primary-link { gap: .8rem; }
+.error-page .lost-actions .primary-link > svg:last-child { margin-left: 1rem; }
+.footer-links a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.footer-links .github-mark { width: 18px; height: 18px; }
+@media (max-width: 760px) {
+  .project-card { grid-template-columns: 1fr; }
+  .project-visual { min-height: 215px; padding: 1.2rem 1.4rem; }
+  .visual-center { display: flex; align-items: center; gap: 1.2rem; padding-block: 1.1rem; }
+  .project-monogram { margin: 0; font-size: 4.5rem; }
+  .project-icon-tile { width: 58px; height: 58px; border-radius: 14px; }
+  .project-description { min-height: 7.2em; }
+  .site-header nav { gap: .7rem; }
+  .nav-github { padding-inline: .5rem; }
+  .nav-github > svg:last-child { display: none; }
+}

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">LCQ</title>
+  <desc id="desc">荧光绿圆角方形底，黑色几何线条构成 LCQ 字母标识。</desc>
+  <rect width="192" height="192" rx="42" fill="#C1FF48"/>
+  <g stroke="#191B18" stroke-width="10" stroke-linecap="square" stroke-linejoin="round">
+    <path d="M29 72v48h25"/>
+    <path d="M104 76a21 26 0 1 0 0 40"/>
+    <rect x="122" y="71" width="40" height="50" rx="20"/>
+    <path d="m147 107 18 21"/>
+  </g>
+</svg>

@@ -1,0 +1,67 @@
+name: Deploy GitHub Pages entry
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'pages-entry/**'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Configure Pages
+        id: pages
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+
+      - name: Require the default github.io hostname
+        env:
+          PAGES_BASE_URL: ${{ steps.pages.outputs.base_url }}
+          REPOSITORY_OWNER: ${{ github.repository_owner }}
+        run: |
+          node --input-type=module <<'NODE'
+          const expectedHost = `${process.env.REPOSITORY_OWNER.toLowerCase()}.github.io`;
+          let pagesUrl;
+          try {
+            pagesUrl = new URL(process.env.PAGES_BASE_URL);
+          } catch {
+            console.error('::error::GitHub Pages returned an invalid base_url. Refusing to deploy.');
+            process.exit(1);
+          }
+          if (pagesUrl.hostname !== expectedHost) {
+            console.error(`::error::Expected Pages hostname ${expectedHost}, received ${pagesUrl.hostname}. A configured or inherited custom domain may be active. Refusing to deploy the entry page; review Pages settings without changing the production domain.`);
+            process.exit(1);
+          }
+          NODE
+
+      - name: Upload entry page
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: pages-entry/
+
+      - name: Deploy entry page
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1

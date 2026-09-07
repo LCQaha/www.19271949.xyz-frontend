@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#c1ff48">
+    <meta name="description" content="LCQ 的网站入口。访问 www.19271949.xyz，查看个人介绍、项目和开源作品。">
+    <link rel="canonical" href="https://www.19271949.xyz/">
+    <link rel="icon" href="./assets/lcq-icon.svg" type="image/svg+xml">
+    <title>LCQ · 网站入口</title>
+    <style>
+      :root { color-scheme:light; --ink:#191b18; --muted:#62665e; --line:#dcded7; --accent:#c1ff48; }
+      * { box-sizing:border-box; }
+      body { margin:0; background:#f8f9f6; color:var(--ink); font-family:Inter,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+      a { color:inherit; text-decoration:none; }
+      a:focus-visible { outline:3px solid #426d00; outline-offset:5px; }
+      .shell { width:min(1040px,100%); min-height:100svh; margin:auto; padding:0 clamp(24px,6vw,64px); display:flex; flex-direction:column; }
+      header { display:flex; justify-content:space-between; align-items:center; gap:16px; padding:28px 0; border-bottom:1px solid var(--line); }
+      .brand { display:flex; align-items:center; gap:12px; font-weight:750; font-size:18px; }
+      .brand img { width:42px; height:42px; }
+      .small { font:12px/1.6 Consolas,monospace; letter-spacing:.08em; color:var(--muted); }
+      main { flex:1; display:flex; flex-direction:column; justify-content:center; align-items:flex-start; padding:64px 0; }
+      .eyebrow { display:inline-flex; align-items:center; gap:9px; font:13px/1.6 Consolas,monospace; letter-spacing:.08em; }
+      .dot { width:7px; height:7px; border-radius:50%; background:#5b8623; box-shadow:0 0 0 4px #e8efdd; }
+      h1 { font-size:clamp(40px,7vw,68px); letter-spacing:-.055em; line-height:1.2; margin:24px 0; }
+      h1 span { box-shadow:inset 0 -.2em var(--accent); }
+      .intro { color:var(--muted); font-size:17px; line-height:1.9; margin:0; }
+      .destination { display:flex; width:100%; align-items:center; justify-content:space-between; gap:20px; background:var(--accent); border:2px solid var(--ink); border-radius:10px; box-shadow:5px 5px 0 var(--ink); margin-top:36px; padding:24px 28px; transition:transform .18s,box-shadow .18s; }
+      .destination:hover { transform:translate(-2px,-2px); box-shadow:7px 7px 0 var(--ink); }
+      .destination small { display:block; font-size:14px; margin-bottom:8px; }
+      .destination strong { font:700 clamp(20px,4vw,32px)/1.3 Consolas,monospace; letter-spacing:-.03em; overflow-wrap:anywhere; }
+      .arrow { font-size:32px; flex-shrink:0; }
+      .links { display:flex; align-items:center; gap:24px; flex-wrap:wrap; margin-top:30px; font-size:14px; }
+      .links a { display:inline-flex; align-items:center; gap:8px; padding:8px 0; }
+      .links a:hover { text-decoration:underline; text-underline-offset:5px; }
+      .links img { width:19px; height:19px; }
+      footer { display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; padding:24px 0; border-top:1px solid var(--line); color:var(--muted); font-size:13px; }
+      @media(max-width:480px) { .destination { padding:22px 18px; } header>.small { display:none; } main { padding:48px 0; } }
+      @media(prefers-reduced-motion:reduce) { * { transition:none!important; } }
+    </style>
+  </head>
+  <body>
+    <div class="shell">
+      <header><a class="brand" href="https://www.19271949.xyz/"><img src="./assets/lcq-icon.svg" alt="LCQ">LCQ / 19271949.xyz</a><span class="small">A LITTLE DOOR TO MY SPACE</span></header>
+      <main>
+        <div class="eyebrow"><span class="dot" aria-hidden="true"></span> LCQ'S PERSONAL SPACE</div>
+        <h1>你好，<br>我的作品在<span>这里。</span></h1>
+        <p class="intro">这是我的网站入口。<br>个人介绍、项目进展与开源作品，都在下面这个地址。</p>
+        <a class="destination" href="https://www.19271949.xyz/" aria-label="进入正式网站 www.19271949.xyz"><span><small>进入我的网站</small><strong>www.19271949.xyz</strong></span><span class="arrow" aria-hidden="true">↗</span></a>
+        <nav class="links" aria-label="更多入口"><a href="https://www.19271949.xyz/#projects">查看项目 <span aria-hidden="true">↗</span></a><a href="https://github.com/LCQaha" target="_blank" rel="noopener noreferrer"><img src="./assets/github.svg" alt="">GitHub / LCQaha <span aria-hidden="true">↗</span></a></nav>
+      </main>
+      <footer><span>LCQ · 保持好奇，继续创造。</span><span>GitHub Pages · 网站入口</span></footer>
+    </div>
+  </body>
+</html>
