@@ -32,6 +32,7 @@ npm run preview
 - [版本规范、打包、挂载与回滚](docs/releases.md)：版本目录、校验文件、GitHub Draft Release，以及原生 Nginx / Docker Compose 两种方式。
 - [代码结构与 404 路由](docs/architecture.md)：修改卡片、新增页面和 Nginx 路由配合。
 - [首次提交清单](docs/first-commit.md)：包含与排除范围、检查命令和建议提交信息。
+- [用户中心部署笔记补充](docs/deployment/README.md)：Nginx 审查修订、MySQL 和 Spring Boot 部署教程。
 
 当前应用版本为 `1.0.0`。执行一次：
 
