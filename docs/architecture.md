@@ -5,7 +5,7 @@
 | 路径 | 用途 |
 | --- | --- |
 | `www/src/views/HomeView.vue` | 首页、项目区与页脚 |
-| `www/src/data/projects.js` | 五张卡片的数据、介绍、技术栈和仓库地址 |
+| `www/src/data/projects.js` | 两张卡片的数据、介绍、技术栈和仓库地址 |
 | `www/src/components/ConstructionSign.vue` | 原版施工牌子 |
 | `www/src/styles/original.css` | 保留原版页面与施工牌子样式 |
 | `www/src/styles/projects.css` | 新卡片与图标样式 |

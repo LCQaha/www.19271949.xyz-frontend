@@ -16,10 +16,10 @@ try {
     await router.push(path)
     const html = await render()
     assert.equal(router.currentRoute.value.name, 'home')
-    assert.equal((html.match(/<article /g) || []).length, 5)
-    assert.ok((html.match(/data-icon="github"/g) || []).length >= 11, 'Repository controls and footer should use the GitHub mark')
+    assert.equal((html.match(/<article /g) || []).length, 2)
+    assert.ok((html.match(/data-icon="github"/g) || []).length >= 5, 'Repository controls and footer should use the GitHub mark')
     assert.ok(html.includes('http://dashboard.19271949.xyz/'))
-    assert.ok(html.includes('https://github.com/LCQaha/test-umi01'))
+    assert.ok(html.includes('https://github.com/LCQaha/user-center-frontend'))
     assert.ok(html.includes('https://github.com/LCQaha/user-center-backend'))
     assert.ok(html.includes('WORK IN PROGRESS'))
   }
@@ -42,7 +42,7 @@ try {
   for (const asset of ['github', 'vuedotjs', 'react', 'springboot', 'nodedotjs', 'markdown']) {
     await access(`www/public/icons/${asset}.svg`)
   }
-  console.log('PASS: home, GitHub icons, five cards, /404, catch-all, preserved URL, return-home navigation, icon assets')
+  console.log('PASS: home, GitHub icons, two cards, /404, catch-all, preserved URL, return-home navigation, icon assets')
 } finally {
   await server.close()
 }

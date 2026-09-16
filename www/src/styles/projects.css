@@ -44,12 +44,6 @@ a.repository-link:hover { background: var(--accent); color: var(--ink); transfor
 .project-tags { margin: 1.15rem 0 1.5rem; }
 .project-tags li { display: inline-flex; align-items: center; gap: .45rem; padding: .4rem .65rem; background: #f5f6f3; border: 1px solid #e9ece4; border-radius: 5px; }
 .tech-brand { display: inline-block; width: 16px; height: 16px; mask-size: contain; mask-repeat: no-repeat; mask-position: center; flex-shrink: 0; }
-.project-card[data-project="example-notes"] .project-visual { background-color: #e7eaf1; }
-.project-card[data-project="example-notes"] .project-icon-tile { color: #485f91; }
-.project-card[data-project="example-habits"] .project-visual { background-color: #e8eedc; }
-.project-card[data-project="example-habits"] .project-icon-tile { color: #517433; }
-.project-card[data-project="example-files"] .project-visual { background-color: #e1ecee; }
-.project-card[data-project="example-files"] .project-icon-tile { color: #377581; }
 .project-link { border-radius: 6px; padding: .65rem .9rem; }
 .nav-link, .nav-github, .footer-links a { display: inline-flex; align-items: center; gap: .5rem; }
 .nav-github { min-height: 42px; padding-inline: .75rem; border: 1px solid var(--line); border-radius: 7px; }

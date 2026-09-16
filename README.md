@@ -1,6 +1,6 @@
 # LCQ · 19271949.xyz
 
-Vue 3 + Vite + Vue Router 4 个人项目首页，源码位于 `www/`。保留原版施工牌子，提供五张项目卡片、GitHub 仓库入口和自定义 404 页面。
+Vue 3 + Vite + Vue Router 4 个人项目首页，源码位于 `www/`。保留原版施工牌子，提供两张项目卡片、GitHub 仓库入口和自定义 404 页面。
 
 ## 开发与验证
 
@@ -47,7 +47,7 @@ npm run release -- --expect-tag v1.0.0
 
 ## 编辑内容
 
-项目数据集中在 `www/src/data/projects.js`。每个 `description` 数组保留 3–5 行介绍；`repositories` 可增加前后端等多个仓库，空地址显示“待补充”。项目 1 指向 Dashboard，项目 2 待定，另外三个卡片明确标为示例。
+项目数据集中在 `www/src/data/projects.js`。每个 `description` 数组保留 3–5 行介绍；`repositories` 可增加前后端等多个仓库，空地址显示“待补充”。项目 1 指向 Dashboard，项目 2 待定。
 
 Dashboard 目前沿用已验证可访问的 HTTP 地址。启用 HTTPS 后，同步修改项目数据和 `www/index.html` 中的无脚本备用链接。
 

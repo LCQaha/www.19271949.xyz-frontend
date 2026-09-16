@@ -1,6 +1,6 @@
 <script setup>
 import { computed } from 'vue'
-import { ArrowUpRight, BookOpen, CalendarCheck, CodeXml, FlaskConical, GitBranch, HardDrive, Sparkles, Users } from '@lucide/vue'
+import { ArrowUpRight, CodeXml, FlaskConical, GitBranch, Sparkles, Users } from '@lucide/vue'
 import GithubMark from './GithubMark.vue'
 import TechTag from './TechTag.vue'
 
@@ -11,9 +11,6 @@ const props = defineProps({
 const projectIcon = computed(() => ({
   'user-center': Users,
   'next-project': Sparkles,
-  'example-notes': BookOpen,
-  'example-habits': CalendarCheck,
-  'example-files': HardDrive,
 })[props.project.id] || CodeXml)
 </script>
 
